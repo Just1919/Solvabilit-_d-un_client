@@ -1,7 +1,7 @@
 # Solvabilit-_d-un_client
 
 Loan Approval Prediction
-📌 Description
+## Description
 
 Ce projet consiste à développer un modèle prédictif de validation de prêts basé sur les caractéristiques des demandeurs (revenus, situation familiale, niveau d’éducation, antécédents de crédit, etc.).
 
@@ -15,7 +15,7 @@ Sauvegarder le modèle entraîné pour une utilisation ultérieure.
 
 Préparer une future mise en production via Flask pour fournir une API de prédiction en temps réel.
 
-📂 Dataset
+ ## Dataset
 
 Le dataset utilisé contient les informations suivantes :
 
@@ -43,7 +43,7 @@ Property_Area : Zone géographique (Urbain, Semi-urbain, Rural)
 
 Loan_Status : Statut du prêt (Y = approuvé, N = refusé)
 
-⚙️ Étapes du projet
+## Étapes du projet
 
 Exploration et nettoyage des données :
 
@@ -77,7 +77,7 @@ Intégration du modèle dans une API avec Flask
 
 Endpoint permettant de faire des prédictions en temps réel à partir de nouvelles données
 
-🚀 Technologies utilisées
+## Technologies utilisées
 
 Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)
 
