@@ -59,7 +59,7 @@ Le dataset contient les informations suivantes :
 
 ### 5️⃣ Mise en production (prévue)
 
-- Déploiement du modèle via Flask  
+- Déploiement du modèle via Streamlit 
 - API pour prédiction en temps réel à partir de nouvelles données  
 - Intégration possible avec un tableau de bord interactif  
 
@@ -67,7 +67,7 @@ Le dataset contient les informations suivantes :
 
 ## 🏆 Résultats
 
-- Le modèle choisi est **AdaBoost**, qui présente un **Recall élevé (0.976)**, permettant de détecter presque tous les mauvais payeurs.  
+- Le modèle choisi est **  En cours **, qui présente un **Recall élevé **, permettant de détecter presque tous les mauvais payeurs.  
 - Ce choix minimise le **risque de défaut**, prioritaire dans un contexte bancaire.  
 - Le pipeline est reproductible, de l’analyse à la sauvegarde du modèle.  
 
