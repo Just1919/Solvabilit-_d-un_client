@@ -76,7 +76,7 @@ Le dataset contient les informations suivantes :
 ## 🛠️ Technologies utilisées
 
 - **Python** : Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn  
-- **Flask** (prévu pour la mise en production)  
+- **Streamlit** (prévu pour la mise en production)  
 
 ---
 
