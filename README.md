@@ -1,100 +1,87 @@
-# Solvabilit-_d-un_client
+# 💳 Solvabilité d’un client – Prédiction d’Approbation de Prêt
 
-Loan Approval Prediction
-## Description
+## 📝 Description
 
-Ce projet consiste à développer un modèle prédictif de validation de prêts basé sur les caractéristiques des demandeurs (revenus, situation familiale, niveau d’éducation, antécédents de crédit, etc.).
+Ce projet vise à développer un modèle prédictif pour évaluer la **solvabilité d’un client** et prédire l’approbation d’un prêt en fonction de ses caractéristiques personnelles et financières (revenus, situation familiale, niveau d’éducation, antécédents de crédit, etc.).
 
-L’objectif est de :
+**Objectifs :**
 
-Analyser et préparer les données de prêts.
+- Explorer et préparer les données de prêts.  
+- Entraîner et comparer différents modèles de Machine Learning.  
+- Identifier le modèle le plus performant selon la **métrique prioritaire : Recall**, afin de détecter un maximum de clients risqués.  
+- Sauvegarder le modèle pour une utilisation ultérieure.  
+- Préparer une future mise en production via une API Flask pour des prédictions en temps réel.
 
-Entraîner un modèle de Machine Learning pour prédire le statut d’approbation d’un prêt (Loan_Status).
+---
 
-Sauvegarder le modèle entraîné pour une utilisation ultérieure.
+## 📊 Dataset
 
-Préparer une future mise en production via Flask pour fournir une API de prédiction en temps réel.
+Le dataset contient les informations suivantes :
 
- ## Dataset
+- **Gender** : Sexe du demandeur  
+- **Married** : État matrimonial  
+- **Dependents** : Nombre de personnes à charge  
+- **Education** : Niveau d’éducation  
+- **Self_Employed** : Travailleur indépendant  
+- **ApplicantIncome** : Revenu principal  
+- **CoapplicantIncome** : Revenu du co-demandeur  
+- **LoanAmount** : Montant du prêt  
+- **Loan_Amount_Term** : Durée du prêt (en jours)  
+- **Credit_History** : Historique de crédit (1 = bon, 0 = mauvais)  
+- **Property_Area** : Zone géographique (Urbain, Semi-urbain, Rural)  
+- **Loan_Status** : Statut du prêt (1 = approuvé, 0 = refusé)  
 
-Le dataset utilisé contient les informations suivantes :
+---
 
-Gender : Sexe du demandeur
+## ⚙️ Étapes du projet
 
-Married : État matrimonial
+### 1️⃣ Exploration et prétraitement des données
 
-Dependents : Nombre de personnes à charge
+- Analyse des valeurs manquantes  
+- Encodage des variables catégorielles  
+- Normalisation des variables numériques  
 
-Education : Niveau d’éducation
+### 2️⃣ Modélisation
 
-Self_Employed : Indique si le demandeur est travailleur indépendant
+- Séparation des données en train/test  
+- Entraînement et comparaison de plusieurs modèles de Machine Learning  
+- Sélection du meilleur modèle selon la **métrique prioritaire : Recall**, pour détecter un maximum de mauvais payeurs et réduire le risque de défaut  
 
-ApplicantIncome : Revenu principal du demandeur
+### 3️⃣ Évaluation
 
-CoapplicantIncome : Revenu du co-demandeur
+- Matrice de confusion  
+- Métriques : Accuracy, Recall, F1-score, ROC-AUC  
+- Analyse métier pour identifier le modèle le plus adapté au scoring crédit  
 
-LoanAmount : Montant du prêt
+### 4️⃣ Sauvegarde du modèle
 
-Loan_Amount_Term : Durée du prêt (en jours)
+- Le modèle final est enregistré pour une utilisation future et pour une mise en production  
 
-Credit_History : Historique de crédit (1 = bon, 0 = mauvais)
+### 5️⃣ Mise en production (prévue)
 
-Property_Area : Zone géographique (Urbain, Semi-urbain, Rural)
+- Déploiement du modèle via Flask  
+- API pour prédiction en temps réel à partir de nouvelles données  
+- Intégration possible avec un tableau de bord interactif  
 
-Loan_Status : Statut du prêt (Y = approuvé, N = refusé)
+---
 
-## Étapes du projet
+## 🏆 Résultats
 
-Exploration et nettoyage des données :
+- Le modèle choisi est **AdaBoost**, qui présente un **Recall élevé (0.976)**, permettant de détecter presque tous les mauvais payeurs.  
+- Ce choix minimise le **risque de défaut**, prioritaire dans un contexte bancaire.  
+- Le pipeline est reproductible, de l’analyse à la sauvegarde du modèle.  
 
-Gestion des valeurs manquantes
+---
 
-Encodage des variables catégorielles
+## 🛠️ Technologies utilisées
 
-Normalisation des variables numériques
+- **Python** : Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn  
+- **Flask** (prévu pour la mise en production)  
 
-Modélisation :
+---
 
-Séparation des données en train/test
+## 🔮 Prochaines étapes
 
-Entraînement de différents modèles (Logistic Regression, Random Forest, etc.)
-
-Sélection du modèle le plus performant
-
-Évaluation :
-
-Précision, recall, F1-score
-
-Matrice de confusion
-
-Sauvegarde du modèle :
-
-Utilisation de Pickle/Joblib pour enregistrer le modèle final
-
-Mise en production (à venir) :
-
-Intégration du modèle dans une API avec Flask
-
-Endpoint permettant de faire des prédictions en temps réel à partir de nouvelles données
-
-## Technologies utilisées
-
-Python (Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn)
-
-Flask (prévu pour la mise en production)
-
-📌 Résultats
-
-Un modèle capable de prédire l’approbation des prêts avec une bonne précision.
-
-Un pipeline reproductible, de l’analyse à la sauvegarde du modèle.
-
-Base solide pour déployer une API de scoring de crédit en temps réel.
-
-🔮 Prochaines étapes
-
-Déploiement du modèle avec Flask.
-
-Création d’une interface utilisateur simple pour la saisie des données et la prédiction.
-
-Intégration possible avec un tableau de bord interactif.
+- Déploiement du modèle avec Streamlit
+- Création d’une interface utilisateur simple pour saisir les données et obtenir la prédiction  
+- Intégration possible avec un tableau de bord interactif pour le suivi du scoring  
