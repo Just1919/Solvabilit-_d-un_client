@@ -1,7 +1,13 @@
+import os
+import joblib
+import numpy as np
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import FunctionTransformer, StandardScaler, OneHotEncoder
+from sklearn.impute import SimpleImputer
+from sklearn.linear_model import LogisticRegression
 import streamlit as st
 import pandas as pd
-import joblib
-import os
 
 # --- Build path to the model ---
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # dossier app/
