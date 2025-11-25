@@ -7,6 +7,13 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # dossier app/
 model_path = os.path.join(BASE_DIR, "..", "model", "loan_logreg_l2_v1_20251125.joblib") 
 
+
+# Vérification : existe-t-il ?
+if not os.path.exists(model_path):
+    raise FileNotFoundError(f"Le fichier modèle est introuvable : {model_path}")
+
+model = joblib.load(model_path)
+
 st.title("🏦 Loan Approval Prediction App")
 st.write("Application professionnelle de scoring pour évaluer la solvabilité d'un client.")
 
