@@ -1,16 +1,24 @@
 # 💳 Solvabilité d’un client – Prédiction d’Approbation de Prêt
 
+**Développé par : DJAKAS Yawo Justin**  
+- LinkedIn : [https://www.linkedin.com/in/yawo-justin-djakas/](https://www.linkedin.com/in/yawo-justin-djakas/)  
+- GitHub : [https://github.com/Just1919](https://github.com/Just1919)  
+
+**Lien de l'App Streamlit :** [https://solvabilit-d-unclient-uvgubixdmwnqn7qhrxlgvb.streamlit.app/](https://solvabilit-d-unclient-uvgubixdmwnqn7qhrxlgvb.streamlit.app/)
+
+---
+
 ## 📝 Description
 
 Ce projet vise à développer un modèle prédictif pour évaluer la **solvabilité d’un client** et prédire l’approbation d’un prêt en fonction de ses caractéristiques personnelles et financières (revenus, situation familiale, niveau d’éducation, antécédents de crédit, etc.).
 
 **Objectifs :**
 
-- Explorer et préparer les données de prêts.  
-- Entraîner et comparer différents modèles de Machine Learning.  
-- Identifier le modèle le plus performant selon la **métrique prioritaire : Recall**, afin de détecter un maximum de clients risqués.  
-- Sauvegarder le modèle pour une utilisation ultérieure.  
-- Préparer une future mise en production via une API Flask pour des prédictions en temps réel.
+- Explorer et préparer les données de prêts  
+- Entraîner et comparer différents modèles de Machine Learning  
+- Identifier le modèle le plus performant selon la **métrique prioritaire : Recall**, afin de détecter un maximum de clients risqués  
+- Sauvegarder le modèle pour une utilisation ultérieure  
+- Préparer la mise en production via Streamlit et API pour des prédictions en temps réel
 
 ---
 
@@ -44,44 +52,40 @@ Le dataset contient les informations suivantes :
 ### 2️⃣ Modélisation
 
 - Séparation des données en train/test  
-- Entraînement et comparaison de plusieurs modèles de Machine Learning  
-- Sélection du meilleur modèle selon la **métrique prioritaire : Recall**, pour détecter un maximum de mauvais payeurs et réduire le risque de défaut  
+- Entraînement et optimisation d’un pipeline **LogisticRegression_L2** avec GridSearchCV  
+- Sélection du meilleur modèle selon le **Recall**, pour détecter un maximum de mauvais payeurs  
 
 ### 3️⃣ Évaluation
 
-- Matrice de confusion  
-- Métriques : Accuracy, Recall, F1-score, ROC-AUC  
+**Résultats sur le jeu test :**
+=== LogisticRegression_L2 optimisée ===
+Meilleur C : 0.1, Seuil optimisé : 0.50
+
+Classification report :
+  precision recall     f1-score support
+0 0.72     0.68        0.70      38
+1 0.86    0.88         0.87     85
+accuracy               0.82       123
+
+
 - Analyse métier pour identifier le modèle le plus adapté au scoring crédit  
 
 ### 4️⃣ Sauvegarde du modèle
 
-- Le modèle final est enregistré pour une utilisation future et pour une mise en production  
+- Le modèle final est enregistré dans `model/` pour une utilisation future et pour la mise en production  
 
 ### 5️⃣ Mise en production (prévue)
 
-- Déploiement du modèle via Streamlit 
-- API pour prédiction en temps réel à partir de nouvelles données  
+- Déploiement via **Streamlit**  
+- API pour prédiction en temps réel  
 - Intégration possible avec un tableau de bord interactif  
-
----
-
-## 🏆 Résultats
-
-- Le modèle choisi est **  En cours **, qui présente un **Recall élevé **, permettant de détecter presque tous les mauvais payeurs.  
-- Ce choix minimise le **risque de défaut**, prioritaire dans un contexte bancaire.  
-- Le pipeline est reproductible, de l’analyse à la sauvegarde du modèle.  
 
 ---
 
 ## 🛠️ Technologies utilisées
 
 - **Python** : Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn  
-- **Streamlit** (prévu pour la mise en production)  
+- **Streamlit** pour la mise en production  
 
----
 
-## 🔮 Prochaines étapes
 
-- Déploiement du modèle avec Streamlit
-- Création d’une interface utilisateur simple pour saisir les données et obtenir la prédiction  
-- Intégration possible avec un tableau de bord interactif pour le suivi du scoring  
